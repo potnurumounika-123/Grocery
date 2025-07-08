@@ -750,6 +750,12 @@ function setupEventListeners() {
             document.getElementById(target).scrollIntoView({ behavior: 'smooth' });
         });
     });
+    
+    // Contact form
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', handleContactForm);
+    }
 }
 
 // Authentication Functions
@@ -1154,6 +1160,22 @@ function createBlogCard(blog) {
     return card;
 }
 
+// Contact Form Handler
+function handleContactForm(e) {
+    e.preventDefault();
+    
+    const name = document.getElementById('contactName').value;
+    const email = document.getElementById('contactEmail').value;
+    const subject = document.getElementById('contactSubject').value;
+    const message = document.getElementById('contactMessage').value;
+    
+    // Simulate form submission
+    showToast('Thank you for your message! We will get back to you soon.', 'success');
+    
+    // Reset form
+    document.getElementById('contactForm').reset();
+}
+
 // Utility Functions
 function closeAllModals() {
     closeAuthModal();
@@ -1183,6 +1205,7 @@ function showToast(message, type = 'success') {
         setTimeout(() => toast.remove(), 300);
     }, 3000);
 }
+
 // Scroll Animations
 function setupScrollAnimations() {
     const observerOptions = {
@@ -1199,7 +1222,7 @@ function setupScrollAnimations() {
     }, observerOptions);
 
     // Observe elements for animation
-    const animateElements = document.querySelectorAll('.feature-card, .category-card, .product-card, .review-card, .blog-card');
+    const animateElements = document.querySelectorAll('.feature-card, .category-card, .product-card, .review-card, .blog-card, .contact-card');
     animateElements.forEach(el => {
         el.classList.add('animate-on-scroll');
         observer.observe(el);
