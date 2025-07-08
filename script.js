@@ -111,7 +111,7 @@ const sampleProducts = [
         name: "Dragon Fruit",
         description: "Exotic dragon fruit",
         price: 300,
-        image: "https://images.pexels.com/photos/1435904/pexels-photo-1435904.jpeg?auto=compress&cs=tinysrgb&w=300",
+        image: "https://images.pexels.com/photos/4397839/pexels-photo-4397839.jpeg?auto=compress&cs=tinysrgb&w=300",
         category: "fruits",
         rating: 4.0,
         inStock: true
@@ -121,7 +121,7 @@ const sampleProducts = [
         name: "Papaya",
         description: "Sweet ripe papaya",
         price: 70,
-        image: "https://images.pexels.com/photos/1435735/pexels-photo-1435735.jpeg?auto=compress&cs=tinysrgb&w=300",
+        image: "https://images.pexels.com/photos/5966630/pexels-photo-5966630.jpeg?auto=compress&cs=tinysrgb&w=300",
         category: "fruits",
         rating: 4.2,
         inStock: true
@@ -141,7 +141,7 @@ const sampleProducts = [
         name: "Blueberries",
         description: "Fresh organic blueberries",
         price: 400,
-        image: "https://images.pexels.com/photos/1435735/pexels-photo-1435735.jpeg?auto=compress&cs=tinysrgb&w=300",
+        image: "https://images.pexels.com/photos/1263986/pexels-photo-1263986.jpeg?auto=compress&cs=tinysrgb&w=300",
         category: "fruits",
         rating: 4.8,
         inStock: true
@@ -151,7 +151,7 @@ const sampleProducts = [
         name: "Cherries",
         description: "Sweet red cherries",
         price: 350,
-        image: "https://images.pexels.com/photos/1435735/pexels-photo-1435735.jpeg?auto=compress&cs=tinysrgb&w=300",
+        image: "https://images.pexels.com/photos/162689/cherry-pair-fruits-sweet-162689.jpeg?auto=compress&cs=tinysrgb&w=300",
         category: "fruits",
         rating: 4.7,
         inStock: true
@@ -233,7 +233,7 @@ const sampleProducts = [
         name: "Cauliflower",
         description: "Fresh white cauliflower",
         price: 50,
-        image: "https://images.pexels.com/photos/1400172/pexels-photo-1400172.jpeg?auto=compress&cs=tinysrgb&w=300",
+        image: "https://images.pexels.com/photos/1458694/pexels-photo-1458694.jpeg?auto=compress&cs=tinysrgb&w=300",
         category: "vegetables",
         rating: 4.2,
         inStock: true
@@ -243,7 +243,7 @@ const sampleProducts = [
         name: "Cucumber",
         description: "Fresh green cucumber",
         price: 35,
-        image: "https://images.pexels.com/photos/1400172/pexels-photo-1400172.jpeg?auto=compress&cs=tinysrgb&w=300",
+        image: "https://images.pexels.com/photos/2329440/pexels-photo-2329440.jpeg?auto=compress&cs=tinysrgb&w=300",
         category: "vegetables",
         rating: 4.1,
         inStock: true
@@ -253,7 +253,7 @@ const sampleProducts = [
         name: "Lettuce",
         description: "Fresh iceberg lettuce",
         price: 40,
-        image: "https://images.pexels.com/photos/1400172/pexels-photo-1400172.jpeg?auto=compress&cs=tinysrgb&w=300",
+        image: "https://images.pexels.com/photos/1656666/pexels-photo-1656666.jpeg?auto=compress&cs=tinysrgb&w=300",
         category: "vegetables",
         rating: 4.0,
         inStock: true
@@ -263,7 +263,7 @@ const sampleProducts = [
         name: "Green Beans",
         description: "Fresh green beans",
         price: 55,
-        image: "https://images.pexels.com/photos/1400172/pexels-photo-1400172.jpeg?auto=compress&cs=tinysrgb&w=300",
+        image: "https://images.pexels.com/photos/1359326/pexels-photo-1359326.jpeg?auto=compress&cs=tinysrgb&w=300",
         category: "vegetables",
         rating: 4.3,
         inStock: true
@@ -273,7 +273,7 @@ const sampleProducts = [
         name: "Eggplant",
         description: "Fresh purple eggplant",
         price: 45,
-        image: "https://images.pexels.com/photos/1400172/pexels-photo-1400172.jpeg?auto=compress&cs=tinysrgb&w=300",
+        image: "https://images.pexels.com/photos/321551/pexels-photo-321551.jpeg?auto=compress&cs=tinysrgb&w=300",
         category: "vegetables",
         rating: 4.2,
         inStock: true
@@ -283,7 +283,7 @@ const sampleProducts = [
         name: "Zucchini",
         description: "Fresh green zucchini",
         price: 50,
-        image: "https://images.pexels.com/photos/1400172/pexels-photo-1400172.jpeg?auto=compress&cs=tinysrgb&w=300",
+        image: "https://images.pexels.com/photos/128536/pexels-photo-128536.jpeg?auto=compress&cs=tinysrgb&w=300",
         category: "vegetables",
         rating: 4.1,
         inStock: true
@@ -303,7 +303,7 @@ const sampleProducts = [
         name: "Sweet Corn",
         description: "Fresh sweet corn",
         price: 40,
-        image: "https://images.pexels.com/photos/1400172/pexels-photo-1400172.jpeg?auto=compress&cs=tinysrgb&w=300",
+        image: "https://images.pexels.com/photos/1359326/pexels-photo-1359326.jpeg?auto=compress&cs=tinysrgb&w=300",
         category: "vegetables",
         rating: 4.3,
         inStock: true
@@ -313,7 +313,7 @@ const sampleProducts = [
         name: "Radish",
         description: "Fresh white radish",
         price: 30,
-        image: "https://images.pexels.com/photos/1400172/pexels-photo-1400172.jpeg?auto=compress&cs=tinysrgb&w=300",
+        image: "https://images.pexels.com/photos/1359326/pexels-photo-1359326.jpeg?auto=compress&cs=tinysrgb&w=300",
         category: "vegetables",
         rating: 4.0,
         inStock: true
@@ -323,7 +323,7 @@ const sampleProducts = [
         name: "Cabbage",
         description: "Fresh green cabbage",
         price: 35,
-        image: "https://images.pexels.com/photos/1400172/pexels-photo-1400172.jpeg?auto=compress&cs=tinysrgb&w=300",
+        image: "https://images.pexels.com/photos/1359326/pexels-photo-1359326.jpeg?auto=compress&cs=tinysrgb&w=300",
         category: "vegetables",
         rating: 4.1,
         inStock: true
@@ -333,7 +333,7 @@ const sampleProducts = [
         name: "Garlic",
         description: "Fresh garlic bulbs",
         price: 120,
-        image: "https://images.pexels.com/photos/1400172/pexels-photo-1400172.jpeg?auto=compress&cs=tinysrgb&w=300",
+        image: "https://images.pexels.com/photos/1359326/pexels-photo-1359326.jpeg?auto=compress&cs=tinysrgb&w=300",
         category: "vegetables",
         rating: 4.5,
         inStock: true
@@ -343,7 +343,7 @@ const sampleProducts = [
         name: "Ginger",
         description: "Fresh ginger root",
         price: 100,
-        image: "https://images.pexels.com/photos/1400172/pexels-photo-1400172.jpeg?auto=compress&cs=tinysrgb&w=300",
+        image: "https://images.pexels.com/photos/1359326/pexels-photo-1359326.jpeg?auto=compress&cs=tinysrgb&w=300",
         category: "vegetables",
         rating: 4.4,
         inStock: true
@@ -353,7 +353,7 @@ const sampleProducts = [
         name: "Green Chili",
         description: "Fresh green chilies",
         price: 60,
-        image: "https://images.pexels.com/photos/1400172/pexels-photo-1400172.jpeg?auto=compress&cs=tinysrgb&w=300",
+        image: "https://images.pexels.com/photos/1359326/pexels-photo-1359326.jpeg?auto=compress&cs=tinysrgb&w=300",
         category: "vegetables",
         rating: 4.2,
         inStock: true
@@ -395,7 +395,7 @@ const sampleProducts = [
         name: "Fresh Butter",
         description: "Unsalted fresh butter",
         price: 120,
-        image: "https://images.pexels.com/photos/236010/pexels-photo-236010.jpeg?auto=compress&cs=tinysrgb&w=300",
+        image: "https://images.pexels.com/photos/1435735/pexels-photo-1435735.jpeg?auto=compress&cs=tinysrgb&w=300",
         category: "dairy",
         rating: 4.4,
         inStock: true
@@ -405,7 +405,7 @@ const sampleProducts = [
         name: "Mozzarella Cheese",
         description: "Fresh mozzarella cheese",
         price: 180,
-        image: "https://images.pexels.com/photos/236010/pexels-photo-236010.jpeg?auto=compress&cs=tinysrgb&w=300",
+        image: "https://images.pexels.com/photos/1435735/pexels-photo-1435735.jpeg?auto=compress&cs=tinysrgb&w=300",
         category: "dairy",
         rating: 4.5,
         inStock: true
@@ -415,7 +415,7 @@ const sampleProducts = [
         name: "Heavy Cream",
         description: "Fresh heavy cream",
         price: 90,
-        image: "https://images.pexels.com/photos/236010/pexels-photo-236010.jpeg?auto=compress&cs=tinysrgb&w=300",
+        image: "https://images.pexels.com/photos/1435735/pexels-photo-1435735.jpeg?auto=compress&cs=tinysrgb&w=300",
         category: "dairy",
         rating: 4.3,
         inStock: true
@@ -425,7 +425,7 @@ const sampleProducts = [
         name: "Cottage Cheese",
         description: "Fresh cottage cheese",
         price: 70,
-        image: "https://images.pexels.com/photos/236010/pexels-photo-236010.jpeg?auto=compress&cs=tinysrgb&w=300",
+        image: "https://images.pexels.com/photos/1435735/pexels-photo-1435735.jpeg?auto=compress&cs=tinysrgb&w=300",
         category: "dairy",
         rating: 4.2,
         inStock: true
@@ -435,7 +435,7 @@ const sampleProducts = [
         name: "Sour Cream",
         description: "Fresh sour cream",
         price: 85,
-        image: "https://images.pexels.com/photos/236010/pexels-photo-236010.jpeg?auto=compress&cs=tinysrgb&w=300",
+        image: "https://images.pexels.com/photos/1435735/pexels-photo-1435735.jpeg?auto=compress&cs=tinysrgb&w=300",
         category: "dairy",
         rating: 4.1,
         inStock: true
@@ -445,7 +445,7 @@ const sampleProducts = [
         name: "Cream Cheese",
         description: "Smooth cream cheese",
         price: 95,
-        image: "https://images.pexels.com/photos/236010/pexels-photo-236010.jpeg?auto=compress&cs=tinysrgb&w=300",
+        image: "https://images.pexels.com/photos/1435735/pexels-photo-1435735.jpeg?auto=compress&cs=tinysrgb&w=300",
         category: "dairy",
         rating: 4.4,
         inStock: true
@@ -455,7 +455,7 @@ const sampleProducts = [
         name: "Paneer",
         description: "Fresh homemade paneer",
         price: 150,
-        image: "https://images.pexels.com/photos/236010/pexels-photo-236010.jpeg?auto=compress&cs=tinysrgb&w=300",
+        image: "https://images.pexels.com/photos/1435735/pexels-photo-1435735.jpeg?auto=compress&cs=tinysrgb&w=300",
         category: "dairy",
         rating: 4.6,
         inStock: true
@@ -487,7 +487,7 @@ const sampleProducts = [
         name: "Bagels",
         description: "Fresh sesame bagels",
         price: 30,
-        image: "https://images.pexels.com/photos/209206/pexels-photo-209206.jpeg?auto=compress&cs=tinysrgb&w=300",
+        image: "https://images.pexels.com/photos/1775043/pexels-photo-1775043.jpeg?auto=compress&cs=tinysrgb&w=300",
         category: "bakery",
         rating: 4.2,
         inStock: true
@@ -497,7 +497,7 @@ const sampleProducts = [
         name: "Muffins",
         description: "Blueberry muffins",
         price: 40,
-        image: "https://images.pexels.com/photos/209206/pexels-photo-209206.jpeg?auto=compress&cs=tinysrgb&w=300",
+        image: "https://images.pexels.com/photos/2067396/pexels-photo-2067396.jpeg?auto=compress&cs=tinysrgb&w=300",
         category: "bakery",
         rating: 4.4,
         inStock: true
@@ -507,7 +507,7 @@ const sampleProducts = [
         name: "Danish Pastry",
         description: "Sweet Danish pastry",
         price: 45,
-        image: "https://images.pexels.com/photos/209206/pexels-photo-209206.jpeg?auto=compress&cs=tinysrgb&w=300",
+        image: "https://images.pexels.com/photos/2067396/pexels-photo-2067396.jpeg?auto=compress&cs=tinysrgb&w=300",
         category: "bakery",
         rating: 4.3,
         inStock: true
@@ -517,7 +517,7 @@ const sampleProducts = [
         name: "Sourdough Bread",
         description: "Artisan sourdough bread",
         price: 60,
-        image: "https://images.pexels.com/photos/209206/pexels-photo-209206.jpeg?auto=compress&cs=tinysrgb&w=300",
+        image: "https://images.pexels.com/photos/1775043/pexels-photo-1775043.jpeg?auto=compress&cs=tinysrgb&w=300",
         category: "bakery",
         rating: 4.6,
         inStock: true
@@ -527,7 +527,7 @@ const sampleProducts = [
         name: "Donuts",
         description: "Glazed donuts pack",
         price: 50,
-        image: "https://images.pexels.com/photos/209206/pexels-photo-209206.jpeg?auto=compress&cs=tinysrgb&w=300",
+        image: "https://images.pexels.com/photos/2067396/pexels-photo-2067396.jpeg?auto=compress&cs=tinysrgb&w=300",
         category: "bakery",
         rating: 4.1,
         inStock: true
@@ -537,7 +537,7 @@ const sampleProducts = [
         name: "Cookies",
         description: "Chocolate chip cookies",
         price: 35,
-        image: "https://images.pexels.com/photos/209206/pexels-photo-209206.jpeg?auto=compress&cs=tinysrgb&w=300",
+        image: "https://images.pexels.com/photos/2067396/pexels-photo-2067396.jpeg?auto=compress&cs=tinysrgb&w=300",
         category: "bakery",
         rating: 4.5,
         inStock: true
@@ -547,7 +547,7 @@ const sampleProducts = [
         name: "Cupcakes",
         description: "Vanilla cupcakes",
         price: 55,
-        image: "https://images.pexels.com/photos/209206/pexels-photo-209206.jpeg?auto=compress&cs=tinysrgb&w=300",
+        image: "https://images.pexels.com/photos/2067396/pexels-photo-2067396.jpeg?auto=compress&cs=tinysrgb&w=300",
         category: "bakery",
         rating: 4.4,
         inStock: true
@@ -557,7 +557,7 @@ const sampleProducts = [
         name: "Pizza Base",
         description: "Fresh pizza base",
         price: 40,
-        image: "https://images.pexels.com/photos/209206/pexels-photo-209206.jpeg?auto=compress&cs=tinysrgb&w=300",
+        image: "https://images.pexels.com/photos/1775043/pexels-photo-1775043.jpeg?auto=compress&cs=tinysrgb&w=300",
         category: "bakery",
         rating: 4.2,
         inStock: true
@@ -567,7 +567,7 @@ const sampleProducts = [
         name: "Garlic Bread",
         description: "Herb garlic bread",
         price: 45,
-        image: "https://images.pexels.com/photos/209206/pexels-photo-209206.jpeg?auto=compress&cs=tinysrgb&w=300",
+        image: "https://images.pexels.com/photos/1775043/pexels-photo-1775043.jpeg?auto=compress&cs=tinysrgb&w=300",
         category: "bakery",
         rating: 4.3,
         inStock: true
@@ -577,7 +577,7 @@ const sampleProducts = [
         name: "Sandwich Bread",
         description: "White sandwich bread",
         price: 30,
-        image: "https://images.pexels.com/photos/209206/pexels-photo-209206.jpeg?auto=compress&cs=tinysrgb&w=300",
+        image: "https://images.pexels.com/photos/1775043/pexels-photo-1775043.jpeg?auto=compress&cs=tinysrgb&w=300",
         category: "bakery",
         rating: 4.1,
         inStock: true
@@ -587,7 +587,7 @@ const sampleProducts = [
         name: "Baguette",
         description: "French baguette",
         price: 50,
-        image: "https://images.pexels.com/photos/209206/pexels-photo-209206.jpeg?auto=compress&cs=tinysrgb&w=300",
+        image: "https://images.pexels.com/photos/1775043/pexels-photo-1775043.jpeg?auto=compress&cs=tinysrgb&w=300",
         category: "bakery",
         rating: 4.4,
         inStock: true
@@ -597,7 +597,7 @@ const sampleProducts = [
         name: "Pita Bread",
         description: "Fresh pita bread",
         price: 35,
-        image: "https://images.pexels.com/photos/209206/pexels-photo-209206.jpeg?auto=compress&cs=tinysrgb&w=300",
+        image: "https://images.pexels.com/photos/1775043/pexels-photo-1775043.jpeg?auto=compress&cs=tinysrgb&w=300",
         category: "bakery",
         rating: 4.2,
         inStock: true
@@ -607,7 +607,7 @@ const sampleProducts = [
         name: "Cake Slice",
         description: "Chocolate cake slice",
         price: 80,
-        image: "https://images.pexels.com/photos/209206/pexels-photo-209206.jpeg?auto=compress&cs=tinysrgb&w=300",
+        image: "https://images.pexels.com/photos/2067396/pexels-photo-2067396.jpeg?auto=compress&cs=tinysrgb&w=300",
         category: "bakery",
         rating: 4.6,
         inStock: true
@@ -638,7 +638,7 @@ const sampleReviews = [
         rating: 5,
         comment: "Love shopping here! The dairy products are always fresh and the prices are reasonable.",
         date: "2024-01-10",
-        avatar: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=100"
+        avatar: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=100"
     },
     {
         id: 4,
@@ -646,7 +646,7 @@ const sampleReviews = [
         rating: 4,
         comment: "Good variety of products. The bakery items are particularly fresh and tasty.",
         date: "2024-01-08",
-        avatar: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=100"
+        avatar: "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=100"
     }
 ];
 
@@ -710,6 +710,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setupEventListeners();
     loadReviews();
     loadBlogs();
+    setupScrollAnimations();
 });
 
 // Event Listeners
@@ -1181,4 +1182,40 @@ function showToast(message, type = 'success') {
         toast.classList.remove('show');
         setTimeout(() => toast.remove(), 300);
     }, 3000);
+}
+// Scroll Animations
+function setupScrollAnimations() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-in');
+            }
+        });
+    }, observerOptions);
+
+    // Observe elements for animation
+    const animateElements = document.querySelectorAll('.feature-card, .category-card, .product-card, .review-card, .blog-card');
+    animateElements.forEach(el => {
+        el.classList.add('animate-on-scroll');
+        observer.observe(el);
+    });
+
+    // Hero content animation
+    const heroContent = document.querySelector('.hero-content');
+    const heroImage = document.querySelector('.hero-image');
+    
+    if (heroContent) {
+        heroContent.classList.add('animate-on-scroll', 'slide-in-left');
+        observer.observe(heroContent);
+    }
+    
+    if (heroImage) {
+        heroImage.classList.add('animate-on-scroll', 'slide-in-right');
+        observer.observe(heroImage);
+    }
 }
