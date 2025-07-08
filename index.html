@@ -16,6 +16,14 @@
                 <span>FreshMart</span>
             </div>
             
+            <nav class="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#products" class="nav-link">Products</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#reviews" class="nav-link">Reviews</a>
+                <a href="#blogs" class="nav-link">Blog</a>
+            </nav>
+            
             <div class="search-bar">
                 <input type="text" placeholder="Search for products..." id="searchInput">
                 <button><i class="fas fa-search"></i></button>
@@ -35,15 +43,66 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
                 <h1>Fresh Groceries Delivered to Your Door</h1>
                 <p>Get fresh fruits, vegetables, and daily essentials delivered in minutes</p>
-                <button class="cta-btn">Shop Now</button>
+                <button class="cta-btn" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">Shop Now</button>
             </div>
             <div class="hero-image">
                 <img src="https://images.pexels.com/photos/1435904/pexels-photo-1435904.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Fresh Groceries">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2>Why Choose FreshMart?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Fast Delivery</h3>
+                    <p>Get your groceries delivered within 30 minutes in your area</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Fresh & Organic</h3>
+                    <p>100% fresh and organic products sourced directly from farms</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Quality Assured</h3>
+                    <p>Every product goes through strict quality checks before delivery</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <h3>Best Prices</h3>
+                    <p>Competitive prices with regular discounts and offers</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Round the clock customer support for all your queries</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-undo"></i>
+                    </div>
+                    <h3>Easy Returns</h3>
+                    <p>Hassle-free returns and refunds within 24 hours</p>
+                </div>
             </div>
         </div>
     </section>
@@ -56,29 +115,60 @@
                 <div class="category-card" data-category="fruits">
                     <img src="https://images.pexels.com/photos/1132047/pexels-photo-1132047.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Fruits">
                     <h3>Fresh Fruits</h3>
+                    <p>15+ varieties</p>
                 </div>
                 <div class="category-card" data-category="vegetables">
                     <img src="https://images.pexels.com/photos/1400172/pexels-photo-1400172.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Vegetables">
                     <h3>Vegetables</h3>
+                    <p>20+ varieties</p>
                 </div>
                 <div class="category-card" data-category="dairy">
                     <img src="https://images.pexels.com/photos/236010/pexels-photo-236010.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Dairy">
                     <h3>Dairy Products</h3>
+                    <p>10+ varieties</p>
                 </div>
                 <div class="category-card" data-category="bakery">
                     <img src="https://images.pexels.com/photos/209206/pexels-photo-209206.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Bakery">
                     <h3>Bakery</h3>
+                    <p>15+ varieties</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Products -->
-    <section class="products">
+    <section class="products" id="products">
         <div class="container">
             <h2>Featured Products</h2>
+            <div class="product-filters">
+                <button class="filter-btn active" onclick="displayProducts(products)">All</button>
+                <button class="filter-btn" onclick="filterProductsByCategory('fruits')">Fruits</button>
+                <button class="filter-btn" onclick="filterProductsByCategory('vegetables')">Vegetables</button>
+                <button class="filter-btn" onclick="filterProductsByCategory('dairy')">Dairy</button>
+                <button class="filter-btn" onclick="filterProductsByCategory('bakery')">Bakery</button>
+            </div>
             <div class="product-grid" id="productGrid">
                 <!-- Products will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews" id="reviews">
+        <div class="container">
+            <h2>What Our Customers Say</h2>
+            <div class="reviews-grid" id="reviewsContainer">
+                <!-- Reviews will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blogs" id="blogs">
+        <div class="container">
+            <h2>Latest from Our Blog</h2>
+            <div class="blogs-grid" id="blogsContainer">
+                <!-- Blog posts will be dynamically loaded here -->
             </div>
         </div>
     </section>
@@ -156,6 +246,56 @@
 
     <!-- Overlay -->
     <div class="overlay" id="overlay"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <i class="fas fa-shopping-basket"></i>
+                        <span>FreshMart</span>
+                    </div>
+                    <p>Your trusted partner for fresh groceries and daily essentials.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#reviews">Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#" onclick="filterProductsByCategory('fruits')">Fresh Fruits</a></li>
+                        <li><a href="#" onclick="filterProductsByCategory('vegetables')">Vegetables</a></li>
+                        <li><a href="#" onclick="filterProductsByCategory('dairy')">Dairy Products</a></li>
+                        <li><a href="#" onclick="filterProductsByCategory('bakery')">Bakery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +91 9876543210</p>
+                        <p><i class="fas fa-envelope"></i> info@freshmart.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Market Street, City</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 FreshMart. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>

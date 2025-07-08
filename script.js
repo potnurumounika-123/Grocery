@@ -3,15 +3,18 @@ let currentUser = null;
 let cart = [];
 let products = [];
 
-// Sample Products Data
+// Expanded Products Data - 60 items total
 const sampleProducts = [
+    // Fresh Fruits (15 items)
     {
         id: 1,
         name: "Fresh Apples",
         description: "Crisp and sweet red apples",
         price: 120,
         image: "https://images.pexels.com/photos/102104/pexels-photo-102104.jpeg?auto=compress&cs=tinysrgb&w=300",
-        category: "fruits"
+        category: "fruits",
+        rating: 4.5,
+        inStock: true
     },
     {
         id: 2,
@@ -19,55 +22,662 @@ const sampleProducts = [
         description: "Fresh organic bananas",
         price: 60,
         image: "https://images.pexels.com/photos/2872755/pexels-photo-2872755.jpeg?auto=compress&cs=tinysrgb&w=300",
-        category: "fruits"
+        category: "fruits",
+        rating: 4.3,
+        inStock: true
     },
     {
         id: 3,
+        name: "Fresh Oranges",
+        description: "Juicy Valencia oranges",
+        price: 80,
+        image: "https://images.pexels.com/photos/161559/background-bitter-breakfast-bright-161559.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "fruits",
+        rating: 4.4,
+        inStock: true
+    },
+    {
+        id: 4,
+        name: "Green Grapes",
+        description: "Sweet seedless green grapes",
+        price: 150,
+        image: "https://images.pexels.com/photos/23042/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=300",
+        category: "fruits",
+        rating: 4.6,
+        inStock: true
+    },
+    {
+        id: 5,
+        name: "Fresh Mangoes",
+        description: "Sweet Alphonso mangoes",
+        price: 200,
+        image: "https://images.pexels.com/photos/918327/pexels-photo-918327.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "fruits",
+        rating: 4.8,
+        inStock: true
+    },
+    {
+        id: 6,
+        name: "Strawberries",
+        description: "Fresh red strawberries",
+        price: 180,
+        image: "https://images.pexels.com/photos/89778/strawberries-frisch-ripe-sweet-89778.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "fruits",
+        rating: 4.7,
+        inStock: true
+    },
+    {
+        id: 7,
+        name: "Pineapple",
+        description: "Sweet tropical pineapple",
+        price: 90,
+        image: "https://images.pexels.com/photos/947879/pexels-photo-947879.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "fruits",
+        rating: 4.2,
+        inStock: true
+    },
+    {
+        id: 8,
+        name: "Watermelon",
+        description: "Fresh juicy watermelon",
+        price: 40,
+        image: "https://images.pexels.com/photos/1313267/pexels-photo-1313267.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "fruits",
+        rating: 4.1,
+        inStock: true
+    },
+    {
+        id: 9,
+        name: "Pomegranate",
+        description: "Fresh ruby red pomegranate",
+        price: 160,
+        image: "https://images.pexels.com/photos/1435735/pexels-photo-1435735.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "fruits",
+        rating: 4.5,
+        inStock: true
+    },
+    {
+        id: 10,
+        name: "Kiwi Fruit",
+        description: "Fresh New Zealand kiwi",
+        price: 220,
+        image: "https://images.pexels.com/photos/1414130/pexels-photo-1414130.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "fruits",
+        rating: 4.3,
+        inStock: true
+    },
+    {
+        id: 11,
+        name: "Dragon Fruit",
+        description: "Exotic dragon fruit",
+        price: 300,
+        image: "https://images.pexels.com/photos/1435904/pexels-photo-1435904.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "fruits",
+        rating: 4.0,
+        inStock: true
+    },
+    {
+        id: 12,
+        name: "Papaya",
+        description: "Sweet ripe papaya",
+        price: 70,
+        image: "https://images.pexels.com/photos/1435735/pexels-photo-1435735.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "fruits",
+        rating: 4.2,
+        inStock: true
+    },
+    {
+        id: 13,
+        name: "Avocado",
+        description: "Fresh Hass avocado",
+        price: 250,
+        image: "https://images.pexels.com/photos/557659/pexels-photo-557659.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "fruits",
+        rating: 4.6,
+        inStock: true
+    },
+    {
+        id: 14,
+        name: "Blueberries",
+        description: "Fresh organic blueberries",
+        price: 400,
+        image: "https://images.pexels.com/photos/1435735/pexels-photo-1435735.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "fruits",
+        rating: 4.8,
+        inStock: true
+    },
+    {
+        id: 15,
+        name: "Cherries",
+        description: "Sweet red cherries",
+        price: 350,
+        image: "https://images.pexels.com/photos/1435735/pexels-photo-1435735.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "fruits",
+        rating: 4.7,
+        inStock: true
+    },
+
+    // Vegetables (20 items)
+    {
+        id: 16,
         name: "Fresh Tomatoes",
         description: "Juicy red tomatoes",
         price: 40,
         image: "https://images.pexels.com/photos/533280/pexels-photo-533280.jpeg?auto=compress&cs=tinysrgb&w=300",
-        category: "vegetables"
+        category: "vegetables",
+        rating: 4.3,
+        inStock: true
     },
     {
-        id: 4,
+        id: 17,
         name: "Green Spinach",
         description: "Fresh leafy spinach",
         price: 30,
         image: "https://images.pexels.com/photos/2325843/pexels-photo-2325843.jpeg?auto=compress&cs=tinysrgb&w=300",
-        category: "vegetables"
+        category: "vegetables",
+        rating: 4.4,
+        inStock: true
     },
     {
-        id: 5,
+        id: 18,
+        name: "Onions",
+        description: "Fresh red onions",
+        price: 35,
+        image: "https://images.pexels.com/photos/533342/pexels-photo-533342.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "vegetables",
+        rating: 4.1,
+        inStock: true
+    },
+    {
+        id: 19,
+        name: "Potatoes",
+        description: "Fresh farm potatoes",
+        price: 25,
+        image: "https://images.pexels.com/photos/144248/potatoes-vegetables-erdfrucht-bio-144248.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "vegetables",
+        rating: 4.2,
+        inStock: true
+    },
+    {
+        id: 20,
+        name: "Carrots",
+        description: "Fresh orange carrots",
+        price: 45,
+        image: "https://images.pexels.com/photos/143133/pexels-photo-143133.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "vegetables",
+        rating: 4.5,
+        inStock: true
+    },
+    {
+        id: 21,
+        name: "Bell Peppers",
+        description: "Colorful bell peppers",
+        price: 80,
+        image: "https://images.pexels.com/photos/1400172/pexels-photo-1400172.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "vegetables",
+        rating: 4.3,
+        inStock: true
+    },
+    {
+        id: 22,
+        name: "Broccoli",
+        description: "Fresh green broccoli",
+        price: 60,
+        image: "https://images.pexels.com/photos/47347/broccoli-vegetable-food-healthy-47347.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "vegetables",
+        rating: 4.4,
+        inStock: true
+    },
+    {
+        id: 23,
+        name: "Cauliflower",
+        description: "Fresh white cauliflower",
+        price: 50,
+        image: "https://images.pexels.com/photos/1400172/pexels-photo-1400172.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "vegetables",
+        rating: 4.2,
+        inStock: true
+    },
+    {
+        id: 24,
+        name: "Cucumber",
+        description: "Fresh green cucumber",
+        price: 35,
+        image: "https://images.pexels.com/photos/1400172/pexels-photo-1400172.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "vegetables",
+        rating: 4.1,
+        inStock: true
+    },
+    {
+        id: 25,
+        name: "Lettuce",
+        description: "Fresh iceberg lettuce",
+        price: 40,
+        image: "https://images.pexels.com/photos/1400172/pexels-photo-1400172.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "vegetables",
+        rating: 4.0,
+        inStock: true
+    },
+    {
+        id: 26,
+        name: "Green Beans",
+        description: "Fresh green beans",
+        price: 55,
+        image: "https://images.pexels.com/photos/1400172/pexels-photo-1400172.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "vegetables",
+        rating: 4.3,
+        inStock: true
+    },
+    {
+        id: 27,
+        name: "Eggplant",
+        description: "Fresh purple eggplant",
+        price: 45,
+        image: "https://images.pexels.com/photos/1400172/pexels-photo-1400172.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "vegetables",
+        rating: 4.2,
+        inStock: true
+    },
+    {
+        id: 28,
+        name: "Zucchini",
+        description: "Fresh green zucchini",
+        price: 50,
+        image: "https://images.pexels.com/photos/1400172/pexels-photo-1400172.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "vegetables",
+        rating: 4.1,
+        inStock: true
+    },
+    {
+        id: 29,
+        name: "Mushrooms",
+        description: "Fresh button mushrooms",
+        price: 90,
+        image: "https://images.pexels.com/photos/1400172/pexels-photo-1400172.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "vegetables",
+        rating: 4.4,
+        inStock: true
+    },
+    {
+        id: 30,
+        name: "Sweet Corn",
+        description: "Fresh sweet corn",
+        price: 40,
+        image: "https://images.pexels.com/photos/1400172/pexels-photo-1400172.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "vegetables",
+        rating: 4.3,
+        inStock: true
+    },
+    {
+        id: 31,
+        name: "Radish",
+        description: "Fresh white radish",
+        price: 30,
+        image: "https://images.pexels.com/photos/1400172/pexels-photo-1400172.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "vegetables",
+        rating: 4.0,
+        inStock: true
+    },
+    {
+        id: 32,
+        name: "Cabbage",
+        description: "Fresh green cabbage",
+        price: 35,
+        image: "https://images.pexels.com/photos/1400172/pexels-photo-1400172.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "vegetables",
+        rating: 4.1,
+        inStock: true
+    },
+    {
+        id: 33,
+        name: "Garlic",
+        description: "Fresh garlic bulbs",
+        price: 120,
+        image: "https://images.pexels.com/photos/1400172/pexels-photo-1400172.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "vegetables",
+        rating: 4.5,
+        inStock: true
+    },
+    {
+        id: 34,
+        name: "Ginger",
+        description: "Fresh ginger root",
+        price: 100,
+        image: "https://images.pexels.com/photos/1400172/pexels-photo-1400172.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "vegetables",
+        rating: 4.4,
+        inStock: true
+    },
+    {
+        id: 35,
+        name: "Green Chili",
+        description: "Fresh green chilies",
+        price: 60,
+        image: "https://images.pexels.com/photos/1400172/pexels-photo-1400172.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "vegetables",
+        rating: 4.2,
+        inStock: true
+    },
+
+    // Dairy Products (10 items)
+    {
+        id: 36,
         name: "Fresh Milk",
         description: "Pure cow milk 1L",
         price: 55,
         image: "https://images.pexels.com/photos/248412/pexels-photo-248412.jpeg?auto=compress&cs=tinysrgb&w=300",
-        category: "dairy"
+        category: "dairy",
+        rating: 4.5,
+        inStock: true
     },
     {
-        id: 6,
+        id: 37,
         name: "Greek Yogurt",
         description: "Creamy Greek yogurt",
         price: 80,
         image: "https://images.pexels.com/photos/1435735/pexels-photo-1435735.jpeg?auto=compress&cs=tinysrgb&w=300",
-        category: "dairy"
+        category: "dairy",
+        rating: 4.6,
+        inStock: true
     },
     {
-        id: 7,
+        id: 38,
+        name: "Cheddar Cheese",
+        description: "Aged cheddar cheese",
+        price: 200,
+        image: "https://images.pexels.com/photos/236010/pexels-photo-236010.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "dairy",
+        rating: 4.7,
+        inStock: true
+    },
+    {
+        id: 39,
+        name: "Fresh Butter",
+        description: "Unsalted fresh butter",
+        price: 120,
+        image: "https://images.pexels.com/photos/236010/pexels-photo-236010.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "dairy",
+        rating: 4.4,
+        inStock: true
+    },
+    {
+        id: 40,
+        name: "Mozzarella Cheese",
+        description: "Fresh mozzarella cheese",
+        price: 180,
+        image: "https://images.pexels.com/photos/236010/pexels-photo-236010.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "dairy",
+        rating: 4.5,
+        inStock: true
+    },
+    {
+        id: 41,
+        name: "Heavy Cream",
+        description: "Fresh heavy cream",
+        price: 90,
+        image: "https://images.pexels.com/photos/236010/pexels-photo-236010.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "dairy",
+        rating: 4.3,
+        inStock: true
+    },
+    {
+        id: 42,
+        name: "Cottage Cheese",
+        description: "Fresh cottage cheese",
+        price: 70,
+        image: "https://images.pexels.com/photos/236010/pexels-photo-236010.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "dairy",
+        rating: 4.2,
+        inStock: true
+    },
+    {
+        id: 43,
+        name: "Sour Cream",
+        description: "Fresh sour cream",
+        price: 85,
+        image: "https://images.pexels.com/photos/236010/pexels-photo-236010.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "dairy",
+        rating: 4.1,
+        inStock: true
+    },
+    {
+        id: 44,
+        name: "Cream Cheese",
+        description: "Smooth cream cheese",
+        price: 95,
+        image: "https://images.pexels.com/photos/236010/pexels-photo-236010.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "dairy",
+        rating: 4.4,
+        inStock: true
+    },
+    {
+        id: 45,
+        name: "Paneer",
+        description: "Fresh homemade paneer",
+        price: 150,
+        image: "https://images.pexels.com/photos/236010/pexels-photo-236010.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "dairy",
+        rating: 4.6,
+        inStock: true
+    },
+
+    // Bakery (15 items)
+    {
+        id: 46,
         name: "Fresh Bread",
         description: "Whole wheat bread loaf",
         price: 35,
         image: "https://images.pexels.com/photos/209206/pexels-photo-209206.jpeg?auto=compress&cs=tinysrgb&w=300",
-        category: "bakery"
+        category: "bakery",
+        rating: 4.3,
+        inStock: true
     },
     {
-        id: 8,
+        id: 47,
         name: "Croissants",
         description: "Buttery French croissants",
         price: 25,
         image: "https://images.pexels.com/photos/2135/food-france-morning-breakfast.jpg?auto=compress&cs=tinysrgb&w=300",
-        category: "bakery"
+        category: "bakery",
+        rating: 4.5,
+        inStock: true
+    },
+    {
+        id: 48,
+        name: "Bagels",
+        description: "Fresh sesame bagels",
+        price: 30,
+        image: "https://images.pexels.com/photos/209206/pexels-photo-209206.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "bakery",
+        rating: 4.2,
+        inStock: true
+    },
+    {
+        id: 49,
+        name: "Muffins",
+        description: "Blueberry muffins",
+        price: 40,
+        image: "https://images.pexels.com/photos/209206/pexels-photo-209206.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "bakery",
+        rating: 4.4,
+        inStock: true
+    },
+    {
+        id: 50,
+        name: "Danish Pastry",
+        description: "Sweet Danish pastry",
+        price: 45,
+        image: "https://images.pexels.com/photos/209206/pexels-photo-209206.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "bakery",
+        rating: 4.3,
+        inStock: true
+    },
+    {
+        id: 51,
+        name: "Sourdough Bread",
+        description: "Artisan sourdough bread",
+        price: 60,
+        image: "https://images.pexels.com/photos/209206/pexels-photo-209206.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "bakery",
+        rating: 4.6,
+        inStock: true
+    },
+    {
+        id: 52,
+        name: "Donuts",
+        description: "Glazed donuts pack",
+        price: 50,
+        image: "https://images.pexels.com/photos/209206/pexels-photo-209206.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "bakery",
+        rating: 4.1,
+        inStock: true
+    },
+    {
+        id: 53,
+        name: "Cookies",
+        description: "Chocolate chip cookies",
+        price: 35,
+        image: "https://images.pexels.com/photos/209206/pexels-photo-209206.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "bakery",
+        rating: 4.5,
+        inStock: true
+    },
+    {
+        id: 54,
+        name: "Cupcakes",
+        description: "Vanilla cupcakes",
+        price: 55,
+        image: "https://images.pexels.com/photos/209206/pexels-photo-209206.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "bakery",
+        rating: 4.4,
+        inStock: true
+    },
+    {
+        id: 55,
+        name: "Pizza Base",
+        description: "Fresh pizza base",
+        price: 40,
+        image: "https://images.pexels.com/photos/209206/pexels-photo-209206.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "bakery",
+        rating: 4.2,
+        inStock: true
+    },
+    {
+        id: 56,
+        name: "Garlic Bread",
+        description: "Herb garlic bread",
+        price: 45,
+        image: "https://images.pexels.com/photos/209206/pexels-photo-209206.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "bakery",
+        rating: 4.3,
+        inStock: true
+    },
+    {
+        id: 57,
+        name: "Sandwich Bread",
+        description: "White sandwich bread",
+        price: 30,
+        image: "https://images.pexels.com/photos/209206/pexels-photo-209206.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "bakery",
+        rating: 4.1,
+        inStock: true
+    },
+    {
+        id: 58,
+        name: "Baguette",
+        description: "French baguette",
+        price: 50,
+        image: "https://images.pexels.com/photos/209206/pexels-photo-209206.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "bakery",
+        rating: 4.4,
+        inStock: true
+    },
+    {
+        id: 59,
+        name: "Pita Bread",
+        description: "Fresh pita bread",
+        price: 35,
+        image: "https://images.pexels.com/photos/209206/pexels-photo-209206.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "bakery",
+        rating: 4.2,
+        inStock: true
+    },
+    {
+        id: 60,
+        name: "Cake Slice",
+        description: "Chocolate cake slice",
+        price: 80,
+        image: "https://images.pexels.com/photos/209206/pexels-photo-209206.jpeg?auto=compress&cs=tinysrgb&w=300",
+        category: "bakery",
+        rating: 4.6,
+        inStock: true
+    }
+];
+
+// Sample Reviews Data
+const sampleReviews = [
+    {
+        id: 1,
+        name: "Priya Sharma",
+        rating: 5,
+        comment: "Amazing quality products! Fresh vegetables delivered right on time. Highly recommended!",
+        date: "2024-01-15",
+        avatar: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=100"
+    },
+    {
+        id: 2,
+        name: "Rahul Kumar",
+        rating: 4,
+        comment: "Great service and fresh fruits. The delivery was quick and packaging was excellent.",
+        date: "2024-01-12",
+        avatar: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=100"
+    },
+    {
+        id: 3,
+        name: "Anita Patel",
+        rating: 5,
+        comment: "Love shopping here! The dairy products are always fresh and the prices are reasonable.",
+        date: "2024-01-10",
+        avatar: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=100"
+    },
+    {
+        id: 4,
+        name: "Vikram Singh",
+        rating: 4,
+        comment: "Good variety of products. The bakery items are particularly fresh and tasty.",
+        date: "2024-01-08",
+        avatar: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=100"
+    }
+];
+
+// Sample Blog Posts
+const sampleBlogs = [
+    {
+        id: 1,
+        title: "10 Health Benefits of Eating Fresh Fruits Daily",
+        excerpt: "Discover how incorporating fresh fruits into your daily diet can boost your immune system and improve overall health.",
+        image: "https://images.pexels.com/photos/1132047/pexels-photo-1132047.jpeg?auto=compress&cs=tinysrgb&w=400",
+        date: "2024-01-20",
+        author: "Dr. Meera Gupta",
+        readTime: "5 min read"
+    },
+    {
+        id: 2,
+        title: "Organic vs Regular: What's the Difference?",
+        excerpt: "Learn about the key differences between organic and regular produce and make informed choices for your family.",
+        image: "https://images.pexels.com/photos/1400172/pexels-photo-1400172.jpeg?auto=compress&cs=tinysrgb&w=400",
+        date: "2024-01-18",
+        author: "Rajesh Verma",
+        readTime: "7 min read"
+    },
+    {
+        id: 3,
+        title: "Best Storage Tips for Fresh Vegetables",
+        excerpt: "Maximize the shelf life of your vegetables with these expert storage tips and keep them fresh longer.",
+        image: "https://images.pexels.com/photos/1400172/pexels-photo-1400172.jpeg?auto=compress&cs=tinysrgb&w=400",
+        date: "2024-01-15",
+        author: "Chef Sunita Rao",
+        readTime: "4 min read"
     }
 ];
 
@@ -98,6 +708,8 @@ document.addEventListener('DOMContentLoaded', function() {
     loadProducts();
     loadUserSession();
     setupEventListeners();
+    loadReviews();
+    loadBlogs();
 });
 
 // Event Listeners
@@ -126,6 +738,15 @@ function setupEventListeners() {
         card.addEventListener('click', function() {
             const category = this.dataset.category;
             filterProductsByCategory(category);
+        });
+    });
+
+    // Navigation
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = this.getAttribute('href').substring(1);
+            document.getElementById(target).scrollIntoView({ behavior: 'smooth' });
         });
     });
 }
@@ -286,17 +907,46 @@ function createProductCard(product) {
     card.innerHTML = `
         <div class="product-image">
             <img src="${product.image}" alt="${product.name}">
+            ${!product.inStock ? '<div class="out-of-stock">Out of Stock</div>' : ''}
         </div>
         <div class="product-info">
             <h3 class="product-name">${product.name}</h3>
             <p class="product-description">${product.description}</p>
+            <div class="product-rating">
+                ${generateStars(product.rating)}
+                <span class="rating-text">(${product.rating})</span>
+            </div>
             <div class="product-price">₹${product.price}</div>
-            <button class="add-to-cart" onclick="addToCart(${product.id})">
-                <i class="fas fa-cart-plus"></i> Add to Cart
+            <button class="add-to-cart ${!product.inStock ? 'disabled' : ''}" 
+                    onclick="addToCart(${product.id})" 
+                    ${!product.inStock ? 'disabled' : ''}>
+                <i class="fas fa-cart-plus"></i> 
+                ${product.inStock ? 'Add to Cart' : 'Out of Stock'}
             </button>
         </div>
     `;
     return card;
+}
+
+function generateStars(rating) {
+    const fullStars = Math.floor(rating);
+    const hasHalfStar = rating % 1 !== 0;
+    let starsHTML = '';
+    
+    for (let i = 0; i < fullStars; i++) {
+        starsHTML += '<i class="fas fa-star"></i>';
+    }
+    
+    if (hasHalfStar) {
+        starsHTML += '<i class="fas fa-star-half-alt"></i>';
+    }
+    
+    const emptyStars = 5 - Math.ceil(rating);
+    for (let i = 0; i < emptyStars; i++) {
+        starsHTML += '<i class="far fa-star"></i>';
+    }
+    
+    return starsHTML;
 }
 
 function filterProductsByCategory(category) {
@@ -325,6 +975,11 @@ function addToCart(productId) {
     }
     
     const product = products.find(p => p.id === productId);
+    if (!product.inStock) {
+        showToast('Product is out of stock!', 'error');
+        return;
+    }
+    
     const existingItem = cart.find(item => item.id === productId);
     
     if (existingItem) {
@@ -430,6 +1085,72 @@ function handleCheckout() {
         toggleCart();
         showToast('Order placed successfully!', 'success');
     }
+}
+
+// Reviews Functions
+function loadReviews() {
+    const reviewsContainer = document.getElementById('reviewsContainer');
+    if (!reviewsContainer) return;
+    
+    reviewsContainer.innerHTML = '';
+    
+    sampleReviews.forEach(review => {
+        const reviewCard = createReviewCard(review);
+        reviewsContainer.appendChild(reviewCard);
+    });
+}
+
+function createReviewCard(review) {
+    const card = document.createElement('div');
+    card.className = 'review-card';
+    card.innerHTML = `
+        <div class="review-header">
+            <img src="${review.avatar}" alt="${review.name}" class="review-avatar">
+            <div class="review-info">
+                <h4>${review.name}</h4>
+                <div class="review-rating">
+                    ${generateStars(review.rating)}
+                </div>
+                <span class="review-date">${new Date(review.date).toLocaleDateString()}</span>
+            </div>
+        </div>
+        <p class="review-comment">${review.comment}</p>
+    `;
+    return card;
+}
+
+// Blog Functions
+function loadBlogs() {
+    const blogsContainer = document.getElementById('blogsContainer');
+    if (!blogsContainer) return;
+    
+    blogsContainer.innerHTML = '';
+    
+    sampleBlogs.forEach(blog => {
+        const blogCard = createBlogCard(blog);
+        blogsContainer.appendChild(blogCard);
+    });
+}
+
+function createBlogCard(blog) {
+    const card = document.createElement('div');
+    card.className = 'blog-card';
+    card.innerHTML = `
+        <div class="blog-image">
+            <img src="${blog.image}" alt="${blog.title}">
+        </div>
+        <div class="blog-content">
+            <h3>${blog.title}</h3>
+            <p class="blog-excerpt">${blog.excerpt}</p>
+            <div class="blog-meta">
+                <span class="blog-author">By ${blog.author}</span>
+                <span class="blog-date">${new Date(blog.date).toLocaleDateString()}</span>
+                <span class="blog-read-time">${blog.readTime}</span>
+            </div>
+            <button class="read-more-btn">Read More</button>
+        </div>
+    `;
+    return card;
 }
 
 // Utility Functions
