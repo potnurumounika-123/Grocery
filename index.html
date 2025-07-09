@@ -11,18 +11,20 @@
     <!-- Header -->
     <header class="header">
         <div class="container">
-            <div class="nav-brand">
-                <i class="fas fa-shopping-basket"></i>
-                <span>FreshMart</span>
+            <div class="header-left">
+                <div class="nav-brand">
+                    <i class="fas fa-shopping-basket"></i>
+                    <span>FreshMart</span>
+                </div>
+                
+                <nav class="nav-menu">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#products" class="nav-link">Products</a>
+                    <a href="#reviews" class="nav-link">Reviews</a>
+                    <a href="#blogs" class="nav-link">Blog</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </nav>
             </div>
-            
-            <nav class="nav-menu">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#products" class="nav-link">Products</a>
-                <a href="#features" class="nav-link">Features</a>
-                <a href="#reviews" class="nav-link">Reviews</a>
-                <a href="#blogs" class="nav-link">Blog</a>
-            </nav>
             
             <div class="search-bar">
                 <input type="text" placeholder="Search for products..." id="searchInput">
@@ -37,14 +39,28 @@
                 <button class="login-btn" id="loginBtn">
                     <i class="fas fa-user"></i>
                     <span id="userDisplay">Login</span>
+                    <div class="user-dropdown" id="userDropdown">
+                        <button class="logout-btn" id="logoutBtn">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Logout
+                        </button>
+                    </div>
                 </button>
             </div>
         </div>
+        <!-- Header Animation Bar -->
+        <div class="header-animation-bar"></div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
+            <div class="hero-animation">
+                <div class="floating-element fruit-1">🍎</div>
+                <div class="floating-element fruit-2">🥕</div>
+                <div class="floating-element fruit-3">🥬</div>
+                <div class="floating-element fruit-4">🍌</div>
+            </div>
             <div class="hero-content">
                 <h1>Fresh Groceries Delivered to Your Door</h1>
                 <p>Get fresh fruits, vegetables, and daily essentials delivered in minutes</p>
@@ -52,57 +68,6 @@
             </div>
             <div class="hero-image">
                 <img src="https://images.pexels.com/photos/1435904/pexels-photo-1435904.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Fresh Groceries">
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features" id="features">
-        <div class="container">
-            <h2>Why Choose FreshMart?</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-truck"></i>
-                    </div>
-                    <h3>Fast Delivery</h3>
-                    <p>Get your groceries delivered within 30 minutes in your area</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-leaf"></i>
-                    </div>
-                    <h3>Fresh & Organic</h3>
-                    <p>100% fresh and organic products sourced directly from farms</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Quality Assured</h3>
-                    <p>Every product goes through strict quality checks before delivery</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-tags"></i>
-                    </div>
-                    <h3>Best Prices</h3>
-                    <p>Competitive prices with regular discounts and offers</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <h3>24/7 Support</h3>
-                    <p>Round the clock customer support for all your queries</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-undo"></i>
-                    </div>
-                    <h3>Easy Returns</h3>
-                    <p>Hassle-free returns and refunds within 24 hours</p>
-                </div>
             </div>
         </div>
     </section>
@@ -183,8 +148,8 @@
         </div>
         <div class="cart-items" id="cartItems">
             <!-- Cart items will be dynamically loaded here -->
-    <!-- Contact Us Section -->
-    <section class="contact" id="contact">
+        </div>
+        <div class="cart-footer">
             <div class="cart-total">
                 <strong>Total: ₹<span id="cartTotal">0</span></strong>
             </div>
@@ -250,54 +215,62 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <h2>Contact Us</h2>
-            <div class="contact-content">
-                <div class="contact-info-section">
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
+            <!-- Contact Us Section -->
+            <section class="contact" id="contact">
+                <h2>Contact Us</h2>
+                <div class="contact-content">
+                    <div class="contact-info-section">
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h3>Visit Our Store</h3>
+                            <p>123 Market Street<br>Fresh Valley, FV 12345<br>India</p>
                         </div>
-                        <h3>Visit Our Store</h3>
-                        <p>123 Market Street<br>Fresh Valley, FV 12345<br>India</p>
-                    </div>
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <h3>Call Us</h3>
+                            <p>+91 9876543210<br>+91 9876543211<br>Mon-Sun: 6AM-11PM</p>
                         </div>
-                        <h3>Call Us</h3>
-                        <p>+91 9876543210<br>+91 9876543211<br>Mon-Sun: 6AM-11PM</p>
-                    </div>
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h3>Email Us</h3>
+                            <p>info@freshmart.com<br>support@freshmart.com<br>orders@freshmart.com</p>
                         </div>
-                        <h3>Email Us</h3>
-                        <p>info@freshmart.com<br>support@freshmart.com<br>orders@freshmart.com</p>
                     </div>
-                </div>
-                <div class="contact-form-section">
-                    <form class="contact-form" id="contactForm">
-                        <h3>Send us a Message</h3>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <input type="text" id="contactName" placeholder="Your Name" required>
+                    <div class="contact-form-section">
+                        <form class="contact-form" id="contactForm">
+                            <h3>Send us a Message</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <input type="text" id="contactName" placeholder="Your Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" id="contactEmail" placeholder="Your Email" required>
+                                </div>
                             </div>
                             <div class="form-group">
-                                <input type="email" id="contactEmail" placeholder="Your Email" required>
+                                <input type="text" id="contactSubject" placeholder="Subject" required>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" id="contactSubject" placeholder="Subject" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="contactMessage" placeholder="Your Message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="contact-submit-btn">
-                            <i class="fas fa-paper-plane"></i>
-                            Send Message
-                        </button>
-                    </form>
+                            <div class="form-group">
+                                <textarea id="contactMessage" placeholder="Your Message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="contact-submit-btn">
+                                <i class="fas fa-paper-plane"></i>
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
                 </div>
+            </section>
+            
+            <!-- Footer Content -->
+            <div class="footer-content">
+                <div class="footer-section">
                         <i class="fas fa-shopping-basket"></i>
                         <span>FreshMart</span>
                     </div>
@@ -328,7 +301,7 @@
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Contact Info</h4>
+                    <h4>Quick Contact</h4>
                     <div class="contact-info">
                         <p><i class="fas fa-phone"></i> +91 9876543210</p>
                         <p><i class="fas fa-envelope"></i> info@freshmart.com</p>

@@ -702,6 +702,8 @@ const productGrid = document.getElementById('productGrid');
 const overlay = document.getElementById('overlay');
 const toastContainer = document.getElementById('toastContainer');
 const searchInput = document.getElementById('searchInput');
+const logoutBtn = document.getElementById('logoutBtn');
+const userDropdown = document.getElementById('userDropdown');
 
 // Initialize Application
 document.addEventListener('DOMContentLoaded', function() {
@@ -711,6 +713,7 @@ document.addEventListener('DOMContentLoaded', function() {
     loadReviews();
     loadBlogs();
     setupScrollAnimations();
+    setupUserDropdown();
 });
 
 // Event Listeners
@@ -733,6 +736,9 @@ function setupEventListeners() {
     
     // Search
     searchInput.addEventListener('input', handleSearch);
+    
+    // Logout
+    logoutBtn.addEventListener('click', logout);
     
     // Category filters
     document.querySelectorAll('.category-card').forEach(card => {
@@ -758,18 +764,31 @@ function setupEventListeners() {
     }
 }
 
+// User Dropdown Setup
+function setupUserDropdown() {
+    loginBtn.addEventListener('click', function(e) {
+        if (currentUser) {
+            e.stopPropagation();
+            userDropdown.classList.toggle('show');
+        } else {
+            showAuthModal('login');
+        }
+    });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!loginBtn.contains(e.target)) {
+            userDropdown.classList.remove('show');
+        }
+    });
+}
+
 // Authentication Functions
 function handleLoginClick() {
     if (currentUser) {
-        showLogoutConfirm();
+        userDropdown.classList.toggle('show');
     } else {
         showAuthModal('login');
-    }
-}
-
-function showLogoutConfirm() {
-    if (confirm('Are you sure you want to logout?')) {
-        logout();
     }
 }
 
@@ -817,9 +836,9 @@ function handleLogin(e) {
         localStorage.setItem('currentUser', JSON.stringify(user));
         updateUserDisplay();
         closeAuthModal();
-        showToast('Login successful!', 'success');
+        showToast('✅ Login successful! Welcome back!', 'success');
     } else {
-        showToast('Invalid email or password!', 'error');
+        showToast('❌ Invalid email or password! Please try again.', 'error');
     }
 }
 
@@ -832,19 +851,19 @@ function handleSignup(e) {
     
     // Validation
     if (password !== confirmPassword) {
-        showToast('Passwords do not match!', 'error');
+        showToast('❌ Passwords do not match! Please check again.', 'error');
         return;
     }
     
     if (password.length < 6) {
-        showToast('Password must be at least 6 characters!', 'error');
+        showToast('❌ Password must be at least 6 characters long!', 'error');
         return;
     }
     
     // Check if user already exists
     const users = JSON.parse(localStorage.getItem('users') || '[]');
     if (users.find(u => u.email === email)) {
-        showToast('Account already exists with this email!', 'error');
+        showToast('❌ Account already exists with this email!', 'error');
         return;
     }
     
@@ -863,16 +882,17 @@ function handleSignup(e) {
     localStorage.setItem('currentUser', JSON.stringify(newUser));
     updateUserDisplay();
     closeAuthModal();
-    showToast('Account created successfully!', 'success');
+    showToast('✅ Account created successfully! Welcome to FreshMart!', 'success');
 }
 
 function logout() {
     currentUser = null;
     localStorage.removeItem('currentUser');
     updateUserDisplay();
+    userDropdown.classList.remove('show');
     cart = [];
     updateCartDisplay();
-    showToast('Logged out successfully!', 'success');
+    showToast('✅ Logged out successfully! See you again soon!', 'success');
 }
 
 function loadUserSession() {
@@ -887,9 +907,11 @@ function updateUserDisplay() {
     if (currentUser) {
         userDisplay.textContent = currentUser.name;
         loginBtn.innerHTML = `<i class="fas fa-user"></i> <span>${currentUser.name}</span>`;
+        userDropdown.style.display = 'block';
     } else {
         userDisplay.textContent = 'Login';
         loginBtn.innerHTML = `<i class="fas fa-user"></i> <span>Login</span>`;
+        userDropdown.style.display = 'none';
     }
 }
 
@@ -976,14 +998,14 @@ function handleSearch() {
 // Cart Functions
 function addToCart(productId) {
     if (!currentUser) {
-        showToast('Please login to add items to cart!', 'warning');
+        showToast('⚠️ Please login to add items to cart!', 'warning');
         showAuthModal('login');
         return;
     }
     
     const product = products.find(p => p.id === productId);
     if (!product.inStock) {
-        showToast('Product is out of stock!', 'error');
+        showToast('❌ Product is out of stock!', 'error');
         return;
     }
     
@@ -999,13 +1021,13 @@ function addToCart(productId) {
     }
     
     updateCartDisplay();
-    showToast(`${product.name} added to cart!`, 'success');
+    showToast(`✅ ${product.name} added to cart!`, 'success');
 }
 
 function removeFromCart(productId) {
     cart = cart.filter(item => item.id !== productId);
     updateCartDisplay();
-    showToast('Item removed from cart!', 'success');
+    showToast('🗑️ Item removed from cart!', 'success');
 }
 
 function updateQuantity(productId, change) {
@@ -1072,13 +1094,13 @@ function toggleCart() {
 
 function handleCheckout() {
     if (!currentUser) {
-        showToast('Please login to checkout!', 'warning');
+        showToast('⚠️ Please login to checkout!', 'warning');
         showAuthModal('login');
         return;
     }
     
     if (cart.length === 0) {
-        showToast('Your cart is empty!', 'warning');
+        showToast('⚠️ Your cart is empty!', 'warning');
         return;
     }
     
@@ -1090,7 +1112,7 @@ function handleCheckout() {
         cart = [];
         updateCartDisplay();
         toggleCart();
-        showToast('Order placed successfully!', 'success');
+        showToast('🎉 Order placed successfully! Thank you for shopping with us!', 'success');
     }
 }
 
@@ -1170,7 +1192,7 @@ function handleContactForm(e) {
     const message = document.getElementById('contactMessage').value;
     
     // Simulate form submission
-    showToast('Thank you for your message! We will get back to you soon.', 'success');
+    showToast('✅ Thank you for your message! We will get back to you soon.', 'success');
     
     // Reset form
     document.getElementById('contactForm').reset();
@@ -1187,12 +1209,7 @@ function closeAllModals() {
 function showToast(message, type = 'success') {
     const toast = document.createElement('div');
     toast.className = `toast ${type}`;
-    toast.innerHTML = `
-        <div style="display: flex; align-items: center; gap: 0.5rem;">
-            <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-circle' : 'exclamation-triangle'}"></i>
-            ${message}
-        </div>
-    `;
+    toast.innerHTML = message;
     
     toastContainer.appendChild(toast);
     
