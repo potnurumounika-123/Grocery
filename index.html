@@ -11,20 +11,18 @@
     <!-- Header -->
     <header class="header">
         <div class="container">
-            <div class="header-left">
-                <div class="nav-brand">
-                    <i class="fas fa-shopping-basket"></i>
-                    <span>FreshMart</span>
-                </div>
-                
-                <nav class="nav-menu">
-                    <a href="#home" class="nav-link">Home</a>
-                    <a href="#products" class="nav-link">Products</a>
-                    <a href="#reviews" class="nav-link">Reviews</a>
-                    <a href="#blogs" class="nav-link">Blog</a>
-                    <a href="#contact" class="nav-link">Contact</a>
-                </nav>
+            <div class="nav-brand">
+                <i class="fas fa-shopping-basket"></i>
+                <span>FreshMart</span>
             </div>
+            
+            <nav class="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#products" class="nav-link">Products</a>
+                <a href="#reviews" class="nav-link">Reviews</a>
+                <a href="#blogs" class="nav-link">Blog</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
             
             <div class="search-bar">
                 <input type="text" placeholder="Search for products..." id="searchInput">
@@ -67,7 +65,7 @@
                 <button class="cta-btn" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">Shop Now</button>
             </div>
             <div class="hero-image">
-                <img src="https://images.pexels.com/photos/1435904/pexels-photo-1435904.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Fresh Groceries">
+                <img src="https://images.pexels.com/photos/1300972/pexels-photo-1300972.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Fresh Groceries">
             </div>
         </div>
     </section>
@@ -215,8 +213,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <!-- Contact Us Section -->
-            <section class="contact" id="contact">
+            <div class="footer-contact" id="contact">
                 <h2>Contact Us</h2>
                 <div class="contact-content">
                     <div class="contact-info-section">
@@ -266,11 +263,12 @@
                         </form>
                     </div>
                 </div>
-            </section>
+            </div>
             
             <!-- Footer Content -->
             <div class="footer-content">
                 <div class="footer-section">
+                    <div class="footer-brand">
                         <i class="fas fa-shopping-basket"></i>
                         <span>FreshMart</span>
                     </div>
@@ -287,8 +285,9 @@
                     <ul>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#products">Products</a></li>
-                        <li><a href="#features">Features</a></li>
                         <li><a href="#reviews">Reviews</a></li>
+                        <li><a href="#blogs">Blog</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -301,14 +300,15 @@
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Quick Contact</h4>
+                    <h4>Contact Info</h4>
                     <div class="contact-info">
                         <p><i class="fas fa-phone"></i> +91 9876543210</p>
                         <p><i class="fas fa-envelope"></i> info@freshmart.com</p>
-                        <p><i class="fas fa-map-marker-alt"></i> 123 Market Street, City</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Market Street, Fresh Valley</p>
                     </div>
                 </div>
             </div>
+            
             <div class="footer-bottom">
                 <p>&copy; 2024 FreshMart. All rights reserved.</p>
             </div>
